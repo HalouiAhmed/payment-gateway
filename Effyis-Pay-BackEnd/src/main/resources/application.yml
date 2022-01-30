@@ -1,0 +1,118 @@
+spring:
+  application:
+    name: effyis-pay
+  datasource:
+    url: jdbc:postgresql://localhost:5432/effyis-pay
+    username: postgres
+    password: root
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update # Prevent Hibernate from Automatic Changes to the DDL Schema
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.stackmail.com
+    port: 587
+    username: ahmed.haloui@effyis-partners.ma
+    password: Aa0df7083
+    sign: Effyis
+    location: Casablanca
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+security:
+  public:
+    endpoint: /effyis/api/api-docs/**,
+      /effyis/api/swagger-ui/**,
+      /effyis/api/accounts/login,
+      /effyis/api/accounts/SignUp,
+      /effyis/api/accounts/otpForPassword,
+      /effyis/api/accounts/VerifyEmailForPassword,
+      /effyis/api/coupons,
+      /effyis/api/accounts/login/VerifyOtp,
+      /effyis/api/accounts/login/SendOtp,
+      /effyis/api/shippingCosts,
+      /effyis/api/taxeRates,
+      /effyis/api/stocks,
+      /effyis/api/costumer,
+      /effyis/api/file/**
+
+
+  jwt:
+    secret: secret
+    expiration:
+      time: 2592000000
+  cors:
+    allowed:
+      origins: http://localhost:4200,http://127.0.0.1:4200
+      methods: HEAD,GET,POST,PUT,DELETE,PATCH
+      headers: Accept,Origin,Content-Type,Depth,User-Agent,If-Modified-Since,Cache-Control,Authorization,X-Req,X-File-Size,X-Requested-With,X-File-Name
+
+
+
+springdoc:
+  swagger-ui:
+    path: /effyis/api/swagger-ui
+  api-docs:
+    path: /effyis/api/api-docs
+
+server:
+  port: 9001
+
+default:
+  role: DEFAULT
+
+datasource:
+  max:
+    pool:
+      size: 20
+  min:
+    idle: 10
+  idle:
+    timeout: 120000
+custom:
+  mailFrom: ahmed.haloui@effyis-partners.ma
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+attachementSize:
+    logo: 1.5
+    slideshow: 3
+    product: 3
+    category: 3
+
+CLOUDINARY_URL: cloudinary://362744843831899:bgL-n1-bS4ouNrcvmuddulwtWws@effyis-group
+cloudinary:
+  api_key: 362744843831899
+  api_secret: bgL-n1-bS4ouNrcvmuddulwtWws
+  cloud_name: effyis-group
+
+config:
+  datasources:
+    -
+      client: client
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIA2UINAVAJTMD4HEPB
+      secret-key: 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
+    region:
+      static: eu-west-3
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: billstorage
+

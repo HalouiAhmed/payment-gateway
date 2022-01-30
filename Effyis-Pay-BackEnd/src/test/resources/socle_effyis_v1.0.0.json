@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "47e278d1-9dac-4324-b75a-5392b55f5158",
+		"name": "socle effyis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"riemann\",\r\n    \"password\" : \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/effyis/api/accounts/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"effyis",
+						"api",
+						"accounts",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyaWVtYW5uIiwiZXhwIjoxNjE2OTI4MjgyLCJyb2xlIjoiREVGQVVMVCJ9.pHVWewIldoiCJmEXf4X5Omyxwth_y4QnO-KQA0MgjxEse8F96PXPZkkKE07VyJpwwsHUvezcqbS36Vr5FvkrPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/effyis/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"effyis",
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

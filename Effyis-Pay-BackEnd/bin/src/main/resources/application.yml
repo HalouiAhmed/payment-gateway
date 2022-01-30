@@ -1,0 +1,91 @@
+spring:
+  application:
+    name: socle-effyis
+  liquibase: 
+    enabled: true
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none  # Prevent Hibernate from Automatic Changes to the DDL Schema
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    initialization-mode: never  # Prevent JPA from trying to Initialize
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: email
+    password: password
+    sign: Effyis
+    location: Casablanca
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+ldap:
+  urls: ldap://ldap.forumsys.com:389/
+  base:
+    dn: dc=example,dc=com 
+  username: cn=read-only-admin,dc=example,dc=com
+  password: password 
+  user:
+    dn:
+      pattern: uid={0}
+            
+security:
+  public:
+    endpoint: /effyis/api/api-docs/**,/effyis/api/swagger-ui/**,/effyis/api/accounts/login
+  jwt:
+    secret: secret
+    expiration:
+      time: 2592000000
+  cors:
+    allowed:
+      origins: http://localhost:4200,http://127.0.0.1:4200
+      methods: HEAD,GET,POST,PUT,DELETE,PATCH
+      headers: Accept,Origin,Content-Type,Depth,User-Agent,If-Modified-Since,Cache-Control,Authorization,X-Req,X-File-Size,X-Requested-With,X-File-Name
+      
+      
+
+springdoc:
+  swagger-ui:
+    path: /effyis/api/swagger-ui
+  api-docs:
+    path: /effyis/api/api-docs
+
+server:
+  port : 9001
+
+default:
+  role: DEFAULT
+  
+config:
+  datasources:
+    -
+      url: jdbc:postgresql://localhost:5432/client1
+      username: postgres
+      password: postgres
+      client: client1
+      changelog: classpath:/db/changelog/changelog-master_client1.xml
+      dropFirst: true
+    -
+      url: jdbc:postgresql://localhost:5432/client2
+      username: postgres
+      password: postgres
+      client: client2
+      changelog: classpath:/db/changelog/changelog-master_client2.xml
+      dropFirst: true
+      
+datasource:
+  max:
+    pool:
+      size: 20
+  min:
+    idle: 10
+  idle:
+    timeout: 120000

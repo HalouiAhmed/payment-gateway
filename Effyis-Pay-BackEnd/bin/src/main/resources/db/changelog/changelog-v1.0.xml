@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog   
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"   
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">   
+                      
+  <changeSet  author="EL KOTB ZAKARIA"  id="1">  
+    <comment>create table Role</comment>
+    <sql>
+            create table role (
+            	id SERIAL not null primary key ,
+                role varchar(255) not null
+            );
+	</sql>
+  </changeSet>                      
+  <changeSet  author="EL KOTB ZAKARIA"  id="2">  
+    <comment>create table Account</comment>
+    <sql>
+            create table account (
+            	id SERIAL not null primary key ,
+                login varchar(255) not null,
+                password varchar(255) not null,
+                role_id bigint,
+				foreign key (role_id) references role (id)
+            );
+	</sql>
+  </changeSet>  
+  <changeSet  author="EL KOTB ZAKARIA"  id="4">  
+    <comment>insert into table Role</comment>
+    <sql>
+            insert into role (role) values ('ADMIN'),('SUPER_ADMIN');
+	</sql>
+  </changeSet> 
+  <changeSet  author="EL KOTB ZAKARIA"  id="5">  
+    <comment>insert into table Account</comment>
+    <sql>
+            insert into account (login,password) values ('zakaria','$2a$10$Xdc3QhtGjttRTZwpv1DYCOYDKYB1zqmQCWFNe8K8x0LhgDEuzMG.u');
+	</sql>
+  </changeSet>
+</databaseChangeLog> 

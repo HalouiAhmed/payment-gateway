@@ -1,0 +1,92 @@
+{"properties": [
+  {
+    "name": "security.cors.allowed.origins",
+    "type": "java.lang.String",
+    "description": "A description for 'security.cors.allowed.origins'"
+  },
+  {
+    "name": "security.jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.secret'"
+  },
+  {
+    "name": "security.public.endpoint",
+    "type": "java.lang.String",
+    "description": "A description for 'security.public.endpoint'"
+  },
+  {
+    "name": "security.cors.allowed.methods",
+    "type": "java.lang.String",
+    "description": "A description for 'security.cors.allowed.methods'"
+  },
+  {
+    "name": "security.cors.allowed.headers",
+    "type": "java.lang.String",
+    "description": "A description for 'security.cors.allowed.headers'"
+  },
+  {
+    "name": "security.jwt.expiration.time",
+    "type": "java.lang.String",
+    "description": "A description for 'security.jwt.expiration.time'"
+  },
+  {
+    "name": "default.role",
+    "type": "java.lang.String",
+    "description": "A description for 'default.role'"
+  },
+  {
+    "name": "datasource.max.pool.size",
+    "type": "java.lang.String",
+    "description": "A description for 'datasource.max.pool.size'"
+  },
+  {
+    "name": "ldap.urls",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.urls'"
+  },
+  {
+    "name": "spring.mail.location",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mail.location'"
+  },
+  {
+    "name": "spring.mail.sign",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.mail.sign'"
+  },
+  {
+    "name": "ldap.base.dn",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.base.dn'"
+  },
+  {
+    "name": "ldap.username",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.username'"
+  },
+  {
+    "name": "ldap.username",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.username'"
+  },
+  {
+    "name": "ldap.user.dn.pattern",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.user.dn.pattern'"
+  },
+  {
+    "name": "datasource.min.idle",
+    "type": "java.lang.String",
+    "description": "A description for 'datasource.min.idle'"
+  },
+  {
+    "name": "datasource.idle.timeout",
+    "type": "java.lang.String",
+    "description": "A description for 'datasource.idle.timeout'"
+  },
+  {
+    "name": "ldap.password",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.password'"
+  }
+]}

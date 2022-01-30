@@ -1,0 +1,19 @@
+1 implemente la table role 
+INSERT INTO public.role(
+	role)
+	VALUES ('ADMIN'),('SUPERADMIN'),('DEFAULT');
+
+2 met un utilisateur avec un mail verifier pour faciliter les test 
+
+=>latable account 
+
+INSERT INTO public.account(
+	 login, password, verified_email, role_id)
+	VALUES ('ahmed@ahmed.com','password',true, 1);
+=> table admin
+
+INSERT INTO public.admin(
+	 agree_to_termes, country, full_name, account_id)
+	VALUES (true, 'morroco', 'Haloui Ahmed', 1);
+
+2 met to email et mots de passe dans application.yml 

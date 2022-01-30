@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="https://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<h3 style="color:black" >Bonjour cher utilisateur d'Effyis Pay  [nom]</h3>
+<p>Nous avons reçu une demande d'accès à votre compte . Votre code de validation est :</p>
+<h3 style="color:#0000FF" th:text=${otp}></h3>
+<p>Ce code est valable pour 3 min !</p>
+<h5>Merci - Effyis Pay</h5>
+</body>
+</html>
